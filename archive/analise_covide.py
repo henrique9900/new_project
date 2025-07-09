@@ -10,12 +10,12 @@ df_covid.info()
 df_covid.head()
 df_covid.describe()
 df_covid.shape()
-
+#converter o dado ultilizado para date_time
 df_covid['Date'] = pd.to_datetime(df_covid['Date'])
 df_covid['Recovered'] = df_covid['Recovered'].apply(lambda x: 0 if x < 0 else x)
 
 df_covid['Province/State'] = df_covid['Province/State'].fillna('Unknown')
-
+#valores unicos 
 df_covid['Country/Region'].nunique()
 
 print('Paises/Regioes unicos (primeiros 10): \n', df_covid['Country/Region'].unique()[:10])
