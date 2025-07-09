@@ -13,7 +13,7 @@ df_covid.shape()
 #converter o dado ultilizado para date_time
 df_covid['Date'] = pd.to_datetime(df_covid['Date'])
 df_covid['Recovered'] = df_covid['Recovered'].apply(lambda x: 0 if x < 0 else x)
-
+#preenchendo valores nulos ou 0 com fillna
 df_covid['Province/State'] = df_covid['Province/State'].fillna('Unknown')
 #valores unicos 
 df_covid['Country/Region'].nunique()
